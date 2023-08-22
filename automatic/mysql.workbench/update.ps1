@@ -18,7 +18,7 @@ function global:au_GetLatest {
     $version = ($download_page.ParsedHtml.getElementsByTagName('h1') | ? innerhtml -match "^MySQL Workbench").innerhtml -replace "^MySQL Workbench "
     $version = $version.Trim()
 
-    $url = 'https://cdn.mysql.com/Downloads/MySQLGUITools/mysql-workbench-community-' + $version + '-winx64.msi'
+    $url = 'https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-' + $version + '-winx64.msi'
     $Latest = @{ URL32 = $url; Version = $version }
     return $Latest
 }
